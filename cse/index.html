@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<!--  
+<!--
 ====================================================
 Homepage: http://localhost:4000
 Credits: http://localhost:4000/disclosure
 ====================================================
 -->
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
 <!-- link href="http://gmpg.org/xfn/11" rel="profile" -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -17,41 +17,17 @@ Credits: http://localhost:4000/disclosure
 
 <title>
   
-    Personal Homepage of foo boo &middot; Technical Log
+    Search &middot; Technical Log
   
 </title>
 
 <!-- Search Engine Optimization -->
-<meta name="description" content="Blogging on ....">
+<meta name="description" content="Search">
 
+<meta name="robots" content="noindex">
+<meta name="robots" content="nofollow">
 
-
-
-
-<!-- Twitter Cards -->
-  
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@gpeegpee">
-<meta name="twitter:image" content="https://gpeegpee.github.io/sitelogo.png">
-
-
-<meta name="twitter:title" content="Personal Homepage of foo boo">
-<meta name="twitter:description" content="Blogging on ....">
 <meta name="twitter:creator" content="@gpeegpee">
-<!-- End Twitter Cards -->
-
-<!-- Open Graph -->
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Personal Homepage of foo boo">
-<meta property="og:description" content="Blogging on ....">
-<meta property="og:url" content="http://localhost:4000/index.html">
-<meta property="og:site_name" content="Technical Log">
-
-<meta property="og:image" content="https://gpeegpee.github.io/sitelogo.png">
-
-<meta property="fb:app_id" content="1003108156422006">
-<meta property="fb:admins" content="817465054">
 
 <!-- Fonts -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400|Tangerine|Inconsolata">
@@ -89,13 +65,9 @@ Credits: http://localhost:4000/disclosure
 <link rel="icon" type="image/png" sizes="192x192"  href="http://localhost:4000/images/icons/android-icon-192x192.png">
 
 
-<link rel="canonical" href="http://localhost:4000/">
-
 
 <!-- RSS -->
 <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/feed.xml">
-
-
 
 </head>
 
@@ -166,72 +138,24 @@ Lanyon based on Jekyll-bootstrap. Powered by Jekyll.
               <small><a href="http://localhost:4000/about" rel="me" title="About"><i class="iconm iconm-user"></i></a></small>
               <small><a href="http://localhost:4000/blog" rel="me" title="Blog"><i class="iconm iconm-quill"></i></a></small>
               <small><a href="http://localhost:4000/contact" rel="me" title="Contact"><i class="iconm iconm-envelop"></i></a></small> 
-            </div>           
+            </div>    
           </h3>
         </div>
       </div>
 
       <div class="container content">
-        <h2 id="lanyon-plus"><a href="https://github.com/dyndna/lanyon-plus">lanyon-plus</a></h2>
+        <p class="text-center">You may also visit <a href="http://localhost:4000/tags">tags</a> or <a href="http://localhost:4000/archive">archive</a> page to browse website contents.</p>
 
-<p>Based on Jekyll theme: <a href="http://lanyon.getpoole.com">Lanyon</a> by <a href="https://github.com/mdo"><strong>Mark Otto</strong></a></p>
+<p class="text-center"><a href="javascript:goBack()" class="social-icons" title="Return to previous page"><i class="fa fa-arrow-circle-left fa-2x"></i></a></p>
 
-<ul>
-  <li>add-ons by <a href="http://sbamin.com">Samir Amin</a></li>
-  <li><a href="http://localhost:4000/disclosure#i-classfa-fa-thumbs-o-up-credits-for-site-featuresi">Site features</a></li>
-  <li>License: Open sourced under the <a href="http://sbamin.com/disclosure/#theme-major-credit--license">MIT license</a>.</li>
-</ul>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
 
-<p>Maximum four posts on front page where first two posts are featured, and remaining are date sorted.</p>
+<p>This page will serve search results if Google Custom Search key is set in <code class="highlighter-rouge">_config.yml</code></p>
 
-<p>Twitter stream will show up here if <code class="highlighter-rouge">twitter_widget_id</code> is present is <code class="highlighter-rouge">_config.yml</code>. <a href="http://sbamin.com">Demo</a></p>
-
-<div class="posts">
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://localhost:4000/blog/2013/01/01/example_content/">
-        Example content
-      </a>
-    </h1>
-
-  <span class="post-date indexpg" itemprop="datePublished" content="2013-01-01"><i class="fa fa-calendar" title="Date published"> 01 Jan 2013</i> <a href="http://localhost:4000/featured" title="Featured posts"><i class="social-icons" title="Featured"></i></a></span>
-
- Example content from lanyon. If page description is more than 140 words, it will be shown as post summary on home page and blog index else post excerpt will be shown. Same rule is for html meta description: &gt;140 words in description or first 50 words of posts will be shown as summary. Page excerpt supports markdown formatted summary.
- <a href="http://localhost:4000/blog/2013/01/01/example_content/" title="Read more"><strong>Read more...</strong></a>
-  </div>
-  <hr class="transp" />
-  
-</div>
-
-<div class="posts">
-  
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="http://localhost:4000/blog/2015/01/31/whats-jekyll/">
-        What's Jekyll?
-      </a>
-    </h1>
-
-  <span class="post-date indexpg" itemprop="datePublished" content="2015-01-31"><i class="fa fa-calendar" title="Date published"> 31 Jan 2015</i></span>
-
- <a href="http://jekyllrb.com">Jekyll</a> is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From <a href="https://github.com/mojombo/jekyll/blob/master/README.markdown">the project’s readme</a>:
-
- <a href="http://localhost:4000/blog/2015/01/31/whats-jekyll/" title="Read more"><strong>Read more...</strong></a>
-  </div>
-  <hr class="transp" />
-  
-  
-  
-  
-</div>
-<h3 class="post-title">
-<div class="pagination" style="margin: 0.5rem;">
-    <a class="pagination-item older" href="http://localhost:4000/blog"><i class="fa fa-edit"> Blog</i></a>
-    <a class="pagination-item newer" href="http://localhost:4000/tags"><i class="fa fa-tags"> Tags</i></a>
-</div>
-</h3>
 
                     <div class="custom-footer" style="display: block;">
             <div class="footer-social-icons">
