@@ -46,7 +46,7 @@ jekyll-archives:
 disqus_shortname: gangheok-kim
 
 # Google analytics
-# ga_tracking_id: "UA-XXXX-1"
+ga_tracking_id: "UA-67196224-2"
 
 # Category descriptions (for archive pages)
 descriptions:
@@ -95,7 +95,7 @@ social:
 
   - name: LinkedIn
     icon: linkedin
-    username: 
+    username:
     url:
     desc: Connect with me on LinkedIn
     share: true
