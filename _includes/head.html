@@ -1,73 +1,105 @@
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<!-- link href="http://gmpg.org/xfn/11" rel="profile" -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  {% if site.name %}
-  <meta name="author" content="{{ site.name }}">
-  <meta name="copyright" content="&copy; {{ site.name }} {{ site.time | date: '%Y' }}">
+<!-- Enable responsiveness on mobile devices-->
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+  {% if page.title == "Home" %}
+    {{ site.title }} &middot; {{ site.tagline }}
+  {% else %}
+    {{ page.title }} &middot; {{ site.title }}
   {% endif %}
+</title>
 
-  <!-- External libraries -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/{{ site.highlightjs_theme }}.min.css">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+<!-- Search Engine Optimization -->
+<meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.content %}{{ page.content | strip_html | truncatewords: 50 }}{% else %}{{ site.description }}{% endif %}">
+{% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
+{% if page.noindex == true %}<meta name="robots" content="noindex">{% endif %}
+{% if page.nofollow == true %}<meta name="robots" content="nofollow">{% endif %}
+{% if site.google_verify %}<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
 
-  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
-  <link rel="shortcut icon" href="{{ "/assets/icons/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
-  <link rel="icon" href="{{ "/assets/icons/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="57x57" href="{{ "/assets/icons/apple-icon-57x57.png" | prepend: site.baseurl }}">
-  <link rel="apple-touch-icon" sizes="60x60" href="{{ "/assets/icons/apple-icon-60x60.png" | prepend: site.baseurl }}">
-  <link rel="apple-touch-icon" sizes="72x72" href="{{ "/assets/icons/apple-icon-72x72.png" | prepend: site.baseurl }}">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ "/assets/icons/apple-icon-76x76.png" | prepend: site.baseurl }}">
-  <link rel="apple-touch-icon" sizes="114x114" href="{{ "/assets/icons/apple-icon-114x114.png" | prepend: site.baseurl }}">
-  <link rel="apple-touch-icon" sizes="120x120" href="{{ "/assets/icons/apple-icon-120x120.png" | prepend: site.baseurl }}">
-  <link rel="apple-touch-icon" sizes="144x144" href="{{ "/assets/icons/apple-icon-144x144.png" | prepend: site.baseurl }}">
-  <link rel="apple-touch-icon" sizes="152x152" href="{{ "/assets/icons/apple-icon-152x152.png" | prepend: site.baseurl }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/icons/apple-icon-180x180.png" | prepend: site.baseurl }}">
-  <link rel="icon" type="image/png" sizes="192x192"  href="{{ "/assets/icons/android-icon-192x192.png" | prepend: site.baseurl }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/icons/favicon-32x32.png" | prepend: site.baseurl }}">
-  <link rel="icon" type="image/png" sizes="96x96" href="{{ "/assets/icons/favicon-96x96.png" | prepend: site.baseurl }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/icons/favicon-16x16.png" | prepend: site.baseurl }}">
-  <link rel="manifest" href="{{ "/assets/icons/manifest.json" | prepend: site.baseurl }}">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="{{ "/assets/icons/ms-icon-144x144.png" | prepend: site.baseurl }}">
-  <meta name="theme-color" content="#ffffff">
+{% if site.owner.twitter %}<!-- Twitter Cards -->
+  {% include twitter_card.html %}
+{% endif %}
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.content %}{{ page.content | strip_html | truncatewords: 50 }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:creator" content="@{{ site.owner.twitter }}">
+<!-- End Twitter Cards -->
 
-  {% if site.protocols.fb_image %}
-  <!-- Facebook OGP cards -->
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
-  <meta property="og:url" content="{{ site.url }}" />
-  <meta property="og:site_name" content="{{ site.title }}" />
-  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="{% if page.cover %}{{ page.cover | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.protocols.fb_image | prepend: site.baseurl | prepend: site.url }}{% endif %}" />
-  <meta property="og:image:type" content="{{ site.protocols.fb_image_type }}" />
-  <meta property="og:image:width" content="{{ site.protocols.fb_image_width }}" />
-  <meta property="og:image:height" content="{{ site.protocols.fb_image_height }}" />
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.content %}{{ page.content | strip_html | truncatewords: 50 }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:site_name" content="{{ site.title }}">
+{% if page.imagefeature %}
+  {% if page.imagefeature contains 'http' %}
+    {% assign domain = '' %}
+  {% else %}
+    {% assign domain = site.urlimg %}
   {% endif %}
+<meta property="og:image" content="{{ domain }}{{ page.imagefeature }}">{% else %}
+<meta property="og:image" content="{% if page.imagesummary %}{{ site.urlimg }}{{ page.imagesummary }}{% else %}{{ site.urlimg }}{{ site.default_bg }}{% endif %}">{% endif %}
+{% if page.videofeature %}<meta property="og:video" content="{{ page.videofeature }}">{% endif %}
+<meta property="fb:app_id" content="1003108156422006">
+<meta property="fb:admins" content="817465054">
 
-  {% if site.protocols.twitter_image %}
-  <!-- Twitter: card tags -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="twitter:image" content="{% if page.cover %}{{ page.cover | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.protocols.twitter_image | prepend: site.baseurl | prepend: site.url }}{% endif %}">
-  <meta name="twitter:url" content="{{ site.url }}">
-  {% endif %}
+<!-- Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400|Tangerine|Inconsolata">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/public/css/iconmoon.css">
 
-  {% if protocols.os_repo and protocols.os_rcs_type and protocols.os_src %}
-  <!-- Open Source Protocol -->
-  <link rel="profile" href="http://osprotocol.com" />
-  <meta property="os:repo" content="{{ protocols.os_repo }}" />
-  <meta property="os:rcs_type" content="{{ protocols.os_rcs_type }}" />
-  <meta property="os:src" content="{{ protocols.os_src }}" />
-  {% endif %}
+<!-- CSS -->
+<link rel="stylesheet" href="{{ site.baseurl }}/public/css/style.min.css">
+{% if page.category contains 'mypubs' or page.category contains 'myaoi' %} 
+<link rel="stylesheet" href="{{ site.baseurl }}/public/css/publ.css">
+<script src="{{ site.baseurl }}/public/js/jquery.min.js"></script>
+{% endif %}
+<!-- Add-on CSS to override system-wide defaults -->
+<link rel="stylesheet" href="{{ site.baseurl }}/public/css/addon.css">
 
-  <!-- Site styles -->
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+<!-- CSS override per page -->
+{% if page.style %}
+   <style type="text/css">
+       {{ page.style }}
+   </style>
+{% endif %}
+
+<!-- Java scripts -->
+<!-- <script src="{{ site.baseurl }}/public/js/jquery.min.js"></script> -->
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="{{ site.url }}/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="{{ site.url }}/images/icons/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.url }}/images/icons/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.url }}/images/icons/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}/images/icons/apple-touch-icon-144x144-precomposed.png">
+<!-- 180x180 (precomposed) for iPhone 6 -->
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="{{ site.url }}/images/icons/apple-touch-icon-180x180.png">
+<!-- 192x192 (precomposed) for Android -->
+<link rel="icon" type="image/png" sizes="192x192"  href="{{ site.url }}/images/icons/android-icon-192x192.png">
+
+{% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
+<link rel="canonical" href="{{ canonical }}">
+{% if site.owner.google_plus %}<link rel="author" href="{{ site.owner.google_plus }}?rel=author">{% endif %}
+
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.url }}/feed.xml">
+
+{% if page.mathjax %}
+  {% include mathjax_support.html %}
+{% endif %}
+
 </head>
