@@ -6,13 +6,13 @@ permalink: /blog/:year/:month/:day/:title/
 relative_permalinks: false
 
 # Setup
-title: Technical Log
+title: GangHeok's TechNote
 #tagline:             'foo's website
 description: This is a blog for sharing technical knowledge
 url: https://gpeegpee.github.io
 baseurl: ""
-# host: 192.168.0.100
-# port: 4000
+host: 192.168.0.100
+port: 4000
 urlimg: https://gpeegpee.github.io/
 markdown: kramdown
 paginate: 5
@@ -35,14 +35,14 @@ exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "l
 
 # About/contact
 author:
-  name: GangHeok Kim
+  name: GangHeok
   url:
   avatar:
-  #email:
+  email: gpeegpee@gmail.com
 
 # Owner/author information
 owner:
-  name:           GangHeok Kim
+  name:           GangHeok
   avatar:         foo.png
   #email:
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
@@ -66,6 +66,8 @@ owner:
 links:
   - title: Home
     url: /
+  - title: Book
+    url: /book/
   - title: Archive
     url: /archive/
   - title: Tags
@@ -78,7 +80,7 @@ links:
 
 # Twitter stream widget:
 # Replace xyz123abc with your twitter widget id from https://twitter.com/settings/widgets
-#twitter_widget_id: xyz123abc
+#twitter_widget_id:
 
 # Add disqus username for Disqus comment board:
 disqus_shortname: gangheok-kim

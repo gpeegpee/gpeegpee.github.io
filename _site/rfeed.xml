@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Technical Log</title>
+    <title>GangHeok's TechNote</title>
     <description>This is a blog for sharing technical knowledge</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/rfeed.xml" rel="self" type="application/rss+xml" />
-    <updated>2017-09-27T01:56:45+09:00</updated>
-    <id>http://localhost:4000</id>
+    <link>http://192.168.0.100:4000/</link>
+    <atom:link href="http://192.168.0.100:4000/rfeed.xml" rel="self" type="application/rss+xml" />
+    <updated>2017-09-27T23:42:15+09:00</updated>
+    <id>http://192.168.0.100:4000</id>
     <author>
-      <name>GangHeok Kim</name>
+      <name>GangHeok</name>
     </author>
     
   </channel>

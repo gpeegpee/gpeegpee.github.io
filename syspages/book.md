@@ -1,8 +1,10 @@
 ---
 layout: page
-title: Archive
-description: "Archive"
-permalink: /archive/
+title: Book
+description: "Book"
+permalink: /book/
+comments: false
+sitemap: false
 category: base
 ---
 
