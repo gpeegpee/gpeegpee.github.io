@@ -11,8 +11,8 @@ title: GangHeok's TechNote
 description: This is a blog for sharing technical knowledge
 url: https://gpeegpee.github.io
 baseurl: ""
-# host: 192.168.0.100
-# port: 4000
+host: 192.168.0.100
+port: 4000
 urlimg: https://gpeegpee.github.io/
 markdown: kramdown
 paginate: 5
