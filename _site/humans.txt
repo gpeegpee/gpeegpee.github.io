@@ -1,10 +1,10 @@
 /* TEAM */
 Primary Contact: GangHeok
-Site: http://192.168.0.100:4000/about/
+Site: https://gpeegpee.github.io/about/
 Twitter: https://twitter.com/gpeegpee
 
 /* THANKS */
-Design Contributors: http://192.168.0.100:4000/disclosure/
+Design Contributors: https://gpeegpee.github.io/disclosure/
 
 /* SITE */
 Last Updated: 2017/09/28
