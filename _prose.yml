@@ -1,7 +1,7 @@
 prose:
   rooturl: ''
-  siteurl: 'http://example.com/'
-  relativeLinks: 'http://example.com/links.jsonp'
+  siteurl: 'https://gpeegpee.github.io/'
+  relativeLinks: 'https://gpeegpee.github.io/links.jsonp'
   media: 'images/media'
   ignore:
     - /_data
@@ -63,7 +63,7 @@ prose:
             - name: "news"
               value: news
             - name: "base"
-              value: base              
+              value: base
           alterable: true
       - name: "tags"
         field:
@@ -74,13 +74,13 @@ prose:
           options:
             - name: "default"
               value: default
-          alterable: true     
+          alterable: true
       - name: "imagefeature"
         field:
           element: "text"
           label: "Featured Image or Video frame jpg for twitter card"
           placeholder: "http url or path relative to images dir"
-          value: "sitelogo.png"        
+          value: "sitelogo.png"
       - name: "show_meta"
         field:
           element: "checkbox"
@@ -100,7 +100,7 @@ prose:
         field:
           element: "checkbox"
           label: "embed gist?"
-          value: false 
+          value: false
       - name: "noindex"
         field:
           element: "checkbox"
@@ -115,12 +115,12 @@ prose:
         field:
           element: "checkbox"
           label: "Keep in sitemap?"
-          value: true   
+          value: true
       - name: "summaryfeed"
         field:
           element: "checkbox"
           label: "Show summary and not full post in rss feed?"
-          value: false      
+          value: false
     pages:
       - name: "published"
         field:
@@ -175,7 +175,7 @@ prose:
               value: author1
             - name: "author2"
               value: author2
-          alterable: true        
+          alterable: true
       - name: "show_meta"
         field:
           element: "checkbox"
@@ -205,7 +205,7 @@ prose:
         field:
           element: "checkbox"
           label: "hide info box while printing?"
-          value: false          
+          value: false
       - name: "sitemap"
         field:
           element: "checkbox"

@@ -1,5 +1,5 @@
 /* TEAM */
-Primary Contact: foo
+Primary Contact: GangHeok
 Site: http://192.168.0.100:4000/about/
 Twitter: https://twitter.com/gpeegpee
 
@@ -7,6 +7,6 @@ Twitter: https://twitter.com/gpeegpee
 Design Contributors: http://192.168.0.100:4000/disclosure/
 
 /* SITE */
-Last Updated: 2017/09/27
+Last Updated: 2017/09/28
 Standards: HTML5, CSS3
 Software: Sublime Text, Chrome, Jekyll, Git, Sass
