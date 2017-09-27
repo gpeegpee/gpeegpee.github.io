@@ -6,7 +6,7 @@
   
     
     <url>
-      <loc>http://192.168.0.100:4000/about/</loc>
+      <loc>https://gpeegpee.github.io/about/</loc>
       
         <lastmod>2016-02-13</lastmod>
       
@@ -21,7 +21,7 @@
   
     
     <url>
-      <loc>http://192.168.0.100:4000/about/aoi/</loc>
+      <loc>https://gpeegpee.github.io/about/aoi/</loc>
       
         <lastmod>2016-02-13</lastmod>
       
@@ -36,9 +36,9 @@
   
     
     <url>
-      <loc>http://192.168.0.100:4000/archive/</loc>
+      <loc>https://gpeegpee.github.io/archive/</loc>
       
-        <lastmod>2017-09-28T00:36:52+09:00</lastmod>
+        <lastmod>2017-09-28T01:14:46+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -53,7 +53,7 @@
   
     
     <url>
-      <loc>http://192.168.0.100:4000/contact/</loc>
+      <loc>https://gpeegpee.github.io/contact/</loc>
       
         <lastmod>2016-02-13</lastmod>
       
@@ -70,7 +70,7 @@
   
     
     <url>
-      <loc>http://192.168.0.100:4000/cv/</loc>
+      <loc>https://gpeegpee.github.io/cv/</loc>
       
         <lastmod>2016-02-13</lastmod>
       
@@ -85,86 +85,9 @@
   
     
     <url>
-      <loc>http://192.168.0.100:4000/disclosure/</loc>
+      <loc>https://gpeegpee.github.io/disclosure/</loc>
       
-        <lastmod>2017-09-28T00:36:52+09:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-  
-    
-    <url>
-      <loc>http://192.168.0.100:4000/feed.xml</loc>
-      
-        <lastmod>2017-09-28T00:36:52+09:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://192.168.0.100:4000/humans.txt</loc>
-      
-        <lastmod>2017-09-28T00:36:52+09:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://192.168.0.100:4000/blog/</loc>
-      
-        <lastmod>2017-09-28T00:36:52+09:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://192.168.0.100:4000/</loc>
-      
-        <lastmod>2017-09-28T00:36:52+09:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://192.168.0.100:4000/links.jsonp</loc>
-      
-        <lastmod>2017-09-28T00:36:52+09:00</lastmod>
+        <lastmod>2017-09-28T01:14:46+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -179,7 +102,84 @@
   
     
     <url>
-      <loc>http://192.168.0.100:4000/about/publications/</loc>
+      <loc>https://gpeegpee.github.io/feed.xml</loc>
+      
+        <lastmod>2017-09-28T01:14:46+09:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://gpeegpee.github.io/humans.txt</loc>
+      
+        <lastmod>2017-09-28T01:14:46+09:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://gpeegpee.github.io/blog/</loc>
+      
+        <lastmod>2017-09-28T01:14:46+09:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://gpeegpee.github.io/</loc>
+      
+        <lastmod>2017-09-28T01:14:46+09:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://gpeegpee.github.io/links.jsonp</loc>
+      
+        <lastmod>2017-09-28T01:14:46+09:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+  
+    
+    <url>
+      <loc>https://gpeegpee.github.io/about/publications/</loc>
       
         <lastmod>2016-02-13</lastmod>
       
@@ -196,26 +196,9 @@
   
     
     <url>
-      <loc>http://192.168.0.100:4000/readme/</loc>
+      <loc>https://gpeegpee.github.io/readme/</loc>
       
-        <lastmod>2017-09-28T00:36:52+09:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-  
-    
-    <url>
-      <loc>http://192.168.0.100:4000/rfeed.xml</loc>
-      
-        <lastmod>2017-09-28T00:36:52+09:00</lastmod>
+        <lastmod>2017-09-28T01:14:46+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -230,9 +213,26 @@
   
     
     <url>
-      <loc>http://192.168.0.100:4000/sitemap.xml</loc>
+      <loc>https://gpeegpee.github.io/rfeed.xml</loc>
       
-        <lastmod>2017-09-28T00:36:52+09:00</lastmod>
+        <lastmod>2017-09-28T01:14:46+09:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+  
+    
+    <url>
+      <loc>https://gpeegpee.github.io/sitemap.xml</loc>
+      
+        <lastmod>2017-09-28T01:14:46+09:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
