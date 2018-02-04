@@ -64,15 +64,15 @@ owner:
 ## sidebar links:
 # For external links add external: true
 links:
-  - title: Home
+  - title: <i class="iconside iconm-home"></i> Home
     url: /
-  - title: Book
+  - title: <i class="iconside iconm-file-pdf"></i> Book
     url: /book/
-  - title: Archive
-    url: /archive/
-  - title: Tags
+  - title: <i class="fa fa-tags"></i> Tags
     url: /tags/
-  - title: Feed
+  - title: <i class="fa fa-archive"></i> Archive
+    url: /archive/
+  - title: <i class="iconside iconm-feed2"></i> Feed
     url: /feed.xml
 
 # Google Custom Search:

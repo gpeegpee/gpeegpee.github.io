@@ -32,8 +32,8 @@ layout: default
   <h2>Related Posts</h2>
 <ul>
   {% for post in site.posts %}
-    {% if post.url != page.url %} 
-      {% for tag in page.tags %} 
+    {% if post.url != page.url %}
+      {% for tag in page.tags %}
         {% if post.tags contains tag %}
           <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a><br /></li>
           {% break %}
