@@ -11,6 +11,21 @@ category: base
 
 <section id="book">
   {%for post in site.categories.book %}
+    <ul class="post-list">
+      <li>
+      <a href="{{ site.url }}{{ post.url }}">{{ post.title }}
+      <span class="entry-date">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+      </span>
+      </a>
+      </li>
+    </ul>
+  {% endfor %}
+</section>
+
+<!--
+<section id="book">
+  {%for post in site.categories.book %}
     {% unless post.next %}
       <ul class="post-list">
     {% else %}
@@ -30,4 +45,4 @@ category: base
       </li>
   {% endfor %}
   </ul>
-</section>
+</section> -->
