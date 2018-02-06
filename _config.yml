@@ -28,6 +28,7 @@ plugins:
   - font-awesome-sass
   - kramdown
   - rouge
+  - fastimage
   - amp-jekyll
 
 include: [".htaccess"]
