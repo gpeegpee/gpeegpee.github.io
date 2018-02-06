@@ -22,7 +22,7 @@ safe: false
 future:      true
 
 ampdir: /amp
-gems:
+plugins:
   - jekyll-paginate
   - jemoji
   - font-awesome-sass
