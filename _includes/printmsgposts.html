@@ -9,7 +9,13 @@
   <tbody>
     <tr>
       <td><i class="fa fa-anchor"> {{ site.url }}{{ page.url }}</i><br /><i class="fa fa-calendar"> {% if page.modified.size > 2 %}{{ page.modified }}{% else %}{{ page.date | date: "%d-%b-%y" }}{% endif %}</i><br /><i class="fa fa-creative-commons"> BY-NC-SA 4.0 {{ site.url }}/disclosure</i></td>
-      <td><img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl={{ site.url }}{{ page.url }}&choe=UTF-8" alt="{{ site.url }}{{ page.url }}" /></td>
+      <td>
+        <amp-img width="150" height="150" src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl={{ site.url }}{{ page.url }}&choe=UTF-8" alt="{{ site.url }}{{ page.url }}">
+          <noscript>
+            <img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl={{ site.url }}{{ page.url }}&choe=UTF-8" width="150" height="150" alt="{{ site.url }}{{ page.url }}">
+          </noscript>
+        </amp-img>
+      </td>
     </tr>
   </tbody>
 </table>

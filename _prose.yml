@@ -1,7 +1,7 @@
 prose:
   rooturl: ''
-  siteurl: 'https://gpeegpee.github.io/'
-  relativeLinks: 'https://gpeegpee.github.io/links.jsonp'
+  siteurl: 'http://gpeegpee.github.io/'
+  relativeLinks: 'http://gpeegpee.github.io/links.jsonp'
   media: 'images/media'
   ignore:
     - /_data

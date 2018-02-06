@@ -8,7 +8,12 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    amp-jekyll (1.0.2)
+      fastimage (>= 1.8.0)
+      jekyll (~> 3.0)
+      nokogiri (>= 1.6.0)
     colorator (1.1.0)
+    fastimage (2.1.1)
     ffi (1.9.18)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
@@ -76,6 +81,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  amp-jekyll
+  fastimage
   font-awesome-sass
   jekyll
   jekyll-compose
@@ -87,4 +94,4 @@ DEPENDENCIES
   rouge
 
 BUNDLED WITH
-   1.16.0.pre.2
+   1.16.1

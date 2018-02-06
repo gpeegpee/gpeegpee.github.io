@@ -11,6 +11,13 @@ layout: default
       {% include meta_info.html %}
     {% endunless %}
   {{ content }}
+  <a rel="license" href="{{ site.baseurl }}/disclosure/" title="CC BY-NC-SA 4.0 License, link to site disclosure">
+    <amp-img class="rimg" width="88" height="31" src="{{ site.baseurl }}/images/by_nc_sa_v4.png" alt="크리에이티브 커먼즈 라이선스">
+      <noscript>
+        <img width="88" height="31" src="{{ site.baseurl }}/images/by_nc_sa_v4.png" alt="크리에이티브 커먼즈 라이선스"/>
+      </noscript>
+    </amp-img>
+  </a>
   <hr>
   {% if page.tags contains 'R' %}
    {% include rblogger.html %}

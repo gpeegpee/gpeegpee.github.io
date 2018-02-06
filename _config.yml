@@ -6,13 +6,11 @@ permalink: /blog/:year/:month/:day/:title/
 relative_permalinks: false
 
 # Setup
-title: GangHeok's LifeLog
-tagline: gangheok's website
-description: This is a blog for sharing technical knowledge
+title: GangHeok's Lifelog
+#tagline: gangheok's website
+description:
 url: https://gpeegpee.github.io
 baseurl: ""
-host: 0.0.0.0
-port: 4000
 urlimg: https://gpeegpee.github.io/
 markdown: kramdown
 paginate: 5
@@ -23,12 +21,14 @@ safe: false
 #timezone:    America/Chicago
 future:      true
 
+ampdir: /amp
 gems:
   - jekyll-paginate
   - jemoji
   - font-awesome-sass
   - kramdown
   - rouge
+  - amp-jekyll
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "rakefile", "README.md", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "LICENSE", "vendor", "assets", "_plugins", "public/dormant"]
