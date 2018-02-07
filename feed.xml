@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GangHeok's Lifelog</title>
+    <description></description>
+    <link>https://gpeegpee.github.io/</link>
+    <atom:link href="https://gpeegpee.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <updated>2018-02-07T23:44:39+09:00</updated>
+    <id>https://gpeegpee.github.io</id>
+    <author>
+      <name>GangHeok</name>
+    </author>
+    
+      <item>
+        <title>Jekyll 블로그에 AMP 적용하기</title>
+        
+          <description>&lt;h2 id=&quot;amp는-뭔가요&quot;&gt;AMP는 뭔가요?&lt;/h2&gt;
+
+&lt;p&gt;AMP(Accelerated Mobile Pages)는 모바일 웹 로딩시간을 줄이기 제안된 오픈소스 프로젝트입니다. AMP의 작동 원리는 대략 3단계로 나뉘며, 핵심은 ‘캐싱’(Caching)입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;페이지 구성 단순화 : 자바스크립트 코드를 최소화합니다. 필요한 기능은 태그 컴포넌트로 만들어둡니다. 구글은 ‘AMP 자바스크립트’라는 라이브러리를 제공합니다.&lt;/li&gt;
+  &lt;li&gt;대역폭 최적화 : 최적화된 해상도 이미지를 찾아 기기에 최적화된 콘텐츠 노출하고, 비동기 로딩을 통해 뉴스 소비 경험을 개선합니다. 비동기 로딩이란, 뉴스를 읽는 데 핵심이 되는 텍스트를 먼저 띄우고 용량이 큰 이미지를 나중에 받는 방식입니다.&lt;/li&gt;
+  &lt;li&gt;페이지 캐싱 : 구글은 AMP를 적용한 뉴스 데이터를 저장(캐싱)합니다. 사용자가 뉴스를 읽겠다고 요청하면, 언론사의 서버가 아니라 미리 캐싱한 데이터를 보여줌으로써 로딩 시간을 획기적으로 줄입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;jekyll-블로그에-amp를-어떻게-적용하나요&quot;&gt;Jekyll 블로그에 AMP를 어떻게 적용하나요?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Jekyll 블로그에 &lt;a href=&quot;https://ampbyexample.com/&quot;&gt;AMP&lt;/a&gt;를 적용하려면 몇가지 수정을 해야 합니다. 다음은 해당 블로그에서 사용하고 있는 &lt;a href=&quot;https://github.com/dyndna/lanyon-plus&quot;&gt;lanyon-plus jekyll theme&lt;/a&gt;를 기준으로 적용하면서 수정한 항목입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;수정한-내용&quot;&gt;[수정한 내용]&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;amp 적용을 위해 &lt;a href=&quot;https://github.com/juusaw/amp-jekyll/tree/master/lib/jekyll&quot;&gt;amp-jekyll&lt;/a&gt;에서 ruby파일 2개를 다운받아 블로그 _plugins폴더에 복사합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;_config.xml에 아래 아래와 같이 필요한 package를 추가합니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-code&quot;&gt;plugins:
+  - fastimage
+  - amp-jekyll
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gemfile에도 필요한 package를 추가합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-code&quot;&gt;gem 'fastimage'
+gem 'amp-jekyll'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&lt;/code&gt; 안에 amp-boilerplate를 추가합니다. lanyon-plus 기준으로는 _include 폴더에 있는 head.html, head_minimal.html를 수정합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-code&quot;&gt;&amp;lt;style amp-boilerplate&amp;gt;body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}&amp;lt;/style&amp;gt;&amp;lt;noscript&amp;gt;&amp;lt;style amp-boilerplate&amp;gt;body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}&amp;lt;/style&amp;gt;&amp;lt;/noscript&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&lt;/code&gt; 안에 amp async script를 추가합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-code&quot;&gt;&amp;lt;script async src=&quot;https://cdn.ampproject.org/v0.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script async custom-element=&quot;amp-analytics&quot; src=&quot;https://cdn.ampproject.org/v0/amp-analytics-0.1.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script async custom-element=&quot;amp-iframe&quot; src=&quot;https://cdn.ampproject.org/v0/amp-iframe-0.1.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;_include 폴더에 있는 head.html, head_minimal.html내에 iconmoon.css와 style.min.css해당 하는 부분을 삭제하고 아래와 같이 amp-custom style로 만들어 줍니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-code&quot;&gt;&amp;lt;style amp-custom&amp;gt;
+  {% include_absolute /public/css/iconmoon.css %}
+  {% include_absolute /public/css/style.min.css %}
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jekyll에서는 기본적으로 _include 밖에 있는 파일을 include할 수 없어 include_absolute plugin을 설치해야 합니다. &lt;a href=&quot;https://github.com/tnhu/jekyll-include-absolute-plugin/blob/master/include_absolute.rb&quot;&gt;include_absolute_plugin&lt;/a&gt;에서 ruby파일을 다운받아 블로그 _plugins 폳더 밑에 복사합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;amp에서는 img tag 대신 amp-img를 사용합니다. 아래와 같이 amp-img로 수정합니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-code&quot;&gt;&amp;lt;amp-img width=&quot;150&quot; height=&quot;150&quot; src=&quot;https://chart.googleapis.com/chart?chs=150x150&amp;amp;cht=qr&amp;amp;chl={{ site.url }}{{ page.url }}&amp;amp;choe=UTF-8&quot; alt=&quot;{{ site.url }}{{ page.url }}&quot;&amp;gt;
+&amp;lt;noscript&amp;gt;
+&amp;lt;img src=&quot;https://chart.googleapis.com/chart?chs=150x150&amp;amp;cht=qr&amp;amp;chl={{ site.url }}{{ page.url }}&amp;amp;choe=UTF-8&quot; width=&quot;150&quot; height=&quot;150&quot; alt=&quot;{{ site.url }}{{ page.url }}&quot;/&amp;gt;
+&amp;lt;/noscript&amp;gt;
+&amp;lt;/amp-img&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;_include폴더에 있는 scripts.html에서 google analytic script부분을 삭제하고 아래와 같이 수정합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-code&quot;&gt;&amp;lt;amp-analytics type=&quot;googleanalytics&quot;&amp;gt;
+&amp;lt;script type=&quot;application/json&quot;&amp;gt;
+{
+  &quot;vars&quot;: {
+    &quot;account&quot;: &quot;{{ site.google_analytics }}&quot;
+  },
+  &quot;triggers&quot;: {
+    &quot;trackPageview&quot;: {
+      &quot;on&quot;: &quot;visible&quot;,
+      &quot;request&quot;: &quot;pageview&quot;
+    }
+  }
+}
+&amp;lt;/script&amp;gt;
+&amp;lt;/amp-analytics&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;필요한 meta tag를 추가합니다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&lt;/code&gt; 안에 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;&lt;/code&gt;를 추가합니다.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&lt;/code&gt; 안에 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,minimum-scale=1,initial-scale=1&quot;&amp;gt;&lt;/code&gt;를 추가합니다. 기존 viewport를 정의한 부분이 있으면 삭제하고 추가합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;/code&gt; tag에 &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;amp&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en-us&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;를 추가합니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sidebar toggle script (해결중)&lt;/li&gt;
+  &lt;li&gt;Disqus comment (해결중)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;amp가-적용되었는지는-어떻게-확인하나요&quot;&gt;amp가 적용되었는지는 어떻게 확인하나요?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;amp가 적용되었는지 확인하기 위해서는 해당 URL뒤에 #development=1을 추가하여 페이지 로딩한 뒤 chrome inspect 메뉴에서 console tab에서 amp validation이 정상적으로 되었는지 로그를 통해 확인할 수 있습니다. 오류가 있는 경우에는 오류 내용과 함께 관련 링크를 제공합니다. 정상적인 경우에는 아래와 같이 성공메시지가 보입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-code&quot;&gt;Powered by AMP ⚡ HTML – Version 1516850240342
+AMP validation successful.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;참고&quot;&gt;참고&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.bloter.net/archives/255539&quot;&gt;http://www.bloter.net/archives/255539&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.bloter.net/archives/250056&quot;&gt;http://www.bloter.net/archives/250056&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://lovefields.github.io/all/2017/01/31/post16.html&quot;&gt;https://lovefields.github.io/all/2017/01/31/post16.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hanheesong.github.io/develope/amp-install/&quot;&gt;https://hanheesong.github.io/develope/amp-install/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://joshua1988.github.io/web-development/amp/amp-getting-started/&quot;&gt;https://joshua1988.github.io/web-development/amp/amp-getting-started/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Mon, 05 Feb 2018 00:00:00 +0900</pubDate>
+        <link>https://gpeegpee.github.io/blog/2018/02/05/apply-amp-with-jekyll/</link>
+        <guid isPermaLink="true">https://gpeegpee.github.io/blog/2018/02/05/apply-amp-with-jekyll/</guid>
+      </item>
+    
+      <item>
+        <title>실용주의 사고와 학습</title>
+        
+          <description>&lt;h2 id=&quot;실용주의-사고와-학습&quot;&gt;실용주의 사고와 학습&lt;/h2&gt;
+
+&lt;p&gt;(Progmatic thinking &amp;amp; learning)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.kyobobook.co.kr/images/book/large/362/l9788992939362.jpg&quot; alt=&quot;book image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;어떻게 하면 더 빨리 배울 수 있을까?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;분명히 읽었던 책인데 왜 내용이 기억나지 않는거지? 기억을 더 오래 할 수는 없을까?&lt;/li&gt;
+  &lt;li&gt;쏟아지는 정보들을 더 빠르게 흡수할 수는 없을까?&lt;/li&gt;
+  &lt;li&gt;습득한 지엽적인 정보들을 쉽게 조직화할 수는 없을까?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이 책에서는 기존 인지과학에서 말하는 좌뇌와 우뇌로 구분짓던 뇌 모델 접근보다는 L모드와 R모드로 나뉘어 어떻게 하면 R모드를 활성화하고 L모드와 시너지를 발휘하게 하는지에 대해 알려주고 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2장 초보에서 전문가에 이르는 여정&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;보고 따라 하면서 배우라&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;흉내내라, 흡수하라, 혁신하라&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;3장 이것이 뇌다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;떠오르는 모든 아이디어를 잡아라. 그러면 더 잘 활용하게 될 것이다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;4장 마음속 들여다 보기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;뇌를 더 많이 활용하고 싶다면 감각적인 경험을 늘려라
+R모드가 이끌고 L모드가 따라오게 하라&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;그림그리기, 말로 표현하기, 토론, 역할극(메타포)&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;아침에 일어나서 떠오르는 것을 메모해보기&lt;/strong&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;5장 당신의 마음을 디버그하라&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;기억보다 글로 쓴 것을 신뢰하라. 기억은 모두 읽기와 쓰기가 함께 일어난다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;6장 의도적으로 배우라&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;목적을 달성하기 위해 SMART 목표를 만들어라&lt;/strong&gt;
+Specific, Measurable, Achievable, Relevant, Time-Boxed&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;SQ3R로 의도적으로 읽으라: &lt;strong&gt;훑어보기, 질문생각, 읽기, 낭송(요약,메모), 복습&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;마인드맵을 활용하여 공간적인 단서와 상관관계를 강조하라&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;7장 경험축적&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;마음속으로 성공을 그려라&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;8장 초점관리하기&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;인터럽트를 관리하기 위해 작업 규칙을 세우라&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;이메일 통제, 가상데스크톱&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+</description>
+        
+        <pubDate>Fri, 04 Sep 2015 00:00:00 +0900</pubDate>
+        <link>https://gpeegpee.github.io/blog/2015/09/04/Progmatic-thinking-learning/</link>
+        <guid isPermaLink="true">https://gpeegpee.github.io/blog/2015/09/04/Progmatic-thinking-learning/</guid>
+      </item>
+    
+  </channel>
+</rss>
