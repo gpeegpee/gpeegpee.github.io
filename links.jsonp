@@ -1,0 +1,13 @@
+callback([
+
+  {
+    "text": "실용주의 사고와 학습",
+    "href": "https://gpeegpee.github.io/blog/2015/09/04/Progmatic-thinking-learning/"
+  } ,
+
+  {
+    "text": "Jekyll 블로그에 AMP 적용하기",
+    "href": "https://gpeegpee.github.io/blog/2018/02/05/apply-amp-with-jekyll/"
+  } 
+
+])
