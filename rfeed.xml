@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GangHeok's Lifelog</title>
+    <description></description>
+    <link>https://gpeegpee.github.io/</link>
+    <atom:link href="https://gpeegpee.github.io/rfeed.xml" rel="self" type="application/rss+xml" />
+    <updated>2018-02-08T21:46:20+09:00</updated>
+    <id>https://gpeegpee.github.io</id>
+    <author>
+      <name>GangHeok</name>
+    </author>
+    
+  </channel>
+</rss>
