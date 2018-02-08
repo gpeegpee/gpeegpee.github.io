@@ -7,6 +7,6 @@ Twitter: https://twitter.com/gpeegpee
 Design Contributors: https://gpeegpee.github.io/disclosure/
 
 /* SITE */
-Last Updated: 2018/02/08
+Last Updated: 2018/02/09
 Standards: HTML5, CSS3
 Software: Sublime Text, Chrome, Jekyll, Git, Sass
