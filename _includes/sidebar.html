@@ -4,13 +4,7 @@
 
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
-<!--   <div class="sidebar-item">
-    <p>{{ site.description }}</p>
-  </div> -->
-
   <nav class="sidebar-nav">
-    <!-- a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a-->
-
     {% comment %}
       The code below dynamically generates a sidebar nav of pages with
       `layout: page` in the front-matter. See readme for usage.
@@ -35,11 +29,6 @@
                     <a class="sidebar-nav-item{% if page.url == link.url %} active{% endif %}" href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
                 {% endif %}
     {% endfor %}
-
-    <!-- {% if site.version %}
-    <a class="sidebar-nav-item" href="{{ site.github_repo }}"><em>lanyon-plus project</em></a>
-    <a class="sidebar-nav-item" href="{{ site.github_repo }}/releases/tag/v{{ site.version }}">Download v{{ site.version }}</a>
-    {% endif %} -->
   </nav>
 
 <!-- <hr class="gh"> -->
@@ -54,15 +43,31 @@
     </form>
 </div>
 </div>
-{% else %}
-<div class="sidebar-item">
-  <h6 class="text-footer">
-    <!-- <a rel="license" href="{{ site.url }}/disclosure/" title="CC BY-NC-SA 4.0 License, link to site disclosure">
-      <amp-img class="rimg" alt="크리에이티브 커먼즈 라이선스" src="http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" width="88" height="31">
-      </amp-img>
-    </a> -->
-  </h6>
-</div>
 {% endif %}
 
 </div>
+
+<!--
+<amp-sidebar id="sidebar-left" layout="nodisplay" side="left">
+  <nav class="sidebar-nav" toolbar="(min-width: 784px)" toolbar-target="sidebar">
+    {% comment %}
+    {% assign pages_list = site.pages | sort:"url" %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if node.layout == "page" %}
+          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% endcomment %}
+
+    {% for link in site.links %}
+      {% if link.external %}
+          <a class="sidebar-nav-item{% if page.url == link.url %} active{% endif %}" href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+      {% else %}
+          <a class="sidebar-nav-item{% if page.url == link.url %} active{% endif %}" href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+</amp-sidebar>
+<div class="sidebar" id="sidebar"></div> -->

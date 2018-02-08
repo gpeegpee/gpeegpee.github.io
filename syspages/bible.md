@@ -9,23 +9,45 @@ noindex: true
 category: base
 ---
 
-{{ site.oldtastement }}
-
+<h2>Old Tastement</h2>
+<hr>
 <section id="bible">
-  {%for book in site.old_tastement %}
-      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-      <h3>{{ book }}</h3>
+  {%for book in site.data.old_tastement %}
+    <h3>{{ book.title }}</h3>
+    {%for post in site.categories.bible %}
       <ul class="post-list">
-      {%for post in site.categories.bible %}
-      <li>
-        <a href="{{ site.url }}{{ post.url }}">{{ post.title }}
-        <span class="entry-date">
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
-        </span>
-        </a>
-      </li>
-      {% endfor %}
+      {% if post.tags contain book.title %}
+        <li>
+          <a href="{{ site.url }}{{ post.url }}">{{ post.title }}
+          <span class="entry-date">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+          </span>
+          </a>
+        </li>
+      {% endif %}
       </ul>
+    {% endfor %}
+  {% endfor %}
+</section>
+
+<br>
+<h2>New Tastement</h2>
+<hr>
+<section id="bible">
+  {%for book in site.data.new_tastement %}
+    <h3>{{ book.title }}</h3>
+    {%for post in site.categories.bible %}
+      <ul class="post-list">
+      {% if post.tags contain book.title %}
+        <li>
+          <a href="{{ site.url }}{{ post.url }}">{{ post.title }}
+          <span class="entry-date">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+          </span>
+          </a>
+        </li>
+      {% endif %}
+      </ul>
+    {% endfor %}
   {% endfor %}
 </section>

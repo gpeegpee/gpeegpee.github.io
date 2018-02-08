@@ -32,10 +32,6 @@
   {% include_absolute /public/css/style.min.css %}
 </style>
 
-{% if page.path contains '_posts' %}
- <link rel="amphtml" href="[[ page.id | prepend: '/amp' | prepend: site.baseurl | prepend: site.url ]]">
-{% endif %}
-
 <!-- CSS -->
 {% if page.category contains 'mypubs' or page.category contains 'myaoi' %}
 <link rel="stylesheet" href="{{ site.baseurl }}/public/css/publ.css">
@@ -74,11 +70,22 @@
 
 {% if site.owner.google_plus %}<link rel="author" href="{{ site.owner.google_plus }}?rel=author">{% endif %}
 
+{% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
+<link rel="canonical" href="{{ canonical }}">
+
+{% if page.path contains '_posts' %}
+  <link rel="amphtml" href="{{ canonical }}">
+  <!-- <link rel="amphtml" href="{{ page.id | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}"> -->
+{% endif %}
+
 <!-- RSS -->
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.url }}/feed.xml">
 
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+{% if page.layout == 'post' %}
 <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+{% endif %}
 </head>
