@@ -66,4 +66,8 @@ layout: default
 
 <div class="page-break"></div>
 
-{% if site.disqus_shortname and page.comments == true %}<div id="disqus_thread"></div><!-- /#disqus_thread -->{% endif %}
+{% if site.disqus_shortname and page.comments == true %}
+<amp-iframe width=600 height=140 frameborder="0" layout="responsive" sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms" resizable src="https://localhost:4000/public/disqus_comments.html#{{page.url | cgi_escape }}">
+<div overflow id="disqus_thread"></div>
+</amp-iframe>
+{% endif %}

@@ -13,7 +13,9 @@ tag:
 
 (Progmatic thinking & learning)
 
-![book image](http://image.kyobobook.co.kr/images/book/large/362/l9788992939362.jpg)
+<br>
+<amp-img width="148" height="198" layout="fixed" src="http://image.kyobobook.co.kr/images/book/large/362/l9788992939362.jpg"></amp-img>
+<br>
 
 **어떻게 하면 더 빨리 배울 수 있을까?**
 
