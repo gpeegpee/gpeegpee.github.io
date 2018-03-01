@@ -21,7 +21,7 @@ safe: false
 #timezone:    America/Chicago
 future:      true
 
-ampdir: /amp
+ampdir: /
 plugins:
   - jekyll-paginate
   - jemoji
